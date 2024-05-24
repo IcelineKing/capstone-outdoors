@@ -1,12 +1,12 @@
 const nationalParksArray = [
   {
-    "LocationID": "ABLI",
-    "LocationName": "Abraham Lincoln Birthplace National Historical Park",
-    "Address": "2995 Lincoln Farm Road",
-    "City": "Hodgenville",
-    "State": "Kentucky",
-    "ZipCode": 42748,
-    "Phone": "(270) 358-3137",
+    LocationID: "ABLI",
+    LocationName: "Abraham Lincoln Birthplace National Historical Park",
+    Address: "2995 Lincoln Farm Road",
+    City: "Hodgenville",
+    State: "Kentucky",
+    ZipCode: 42748,
+    Phone: "(270) 358-3137",
     Fax: "(270) 358-3874",
     Latitude: 37.535671,
     Longitude: -85.7340637,
@@ -5812,3 +5812,11 @@ const nationalParksArray = [
     },
   },
 ];
+
+function getNationalParksArrayBy(LocationId) {
+  for (let i = 0; i < NationalParks.length; i++) {
+    if (nationalParksArray[i].nationalParksId == LocationId) {
+      return nationalParks[i];
+    }
+  }
+}

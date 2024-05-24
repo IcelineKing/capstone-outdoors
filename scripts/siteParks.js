@@ -1,22 +1,28 @@
 "use strict";
 
-const nationalParksCategoryDropdown = document.getElementById("LocationID");
-const nationalParksList = document.getElementById("parksList");
-const nationalParksDetailRow = document.getElementById("parksDetailRow");
-const nationalParksName = document.getElementById("LocationName");
-const nationalParksAddress = document.getElementById("parksAddress");
-const nationalParksCity = document.getElementById("parksCity");
-const nationalParksState = document.getElementById("parksState");
-const nationalParksZipCode = document.getElementById("parksZipCode");
-const nationalParksPhone = document.getElementById("parksPhone");
-const nationalParksFax = document.getElementById("parksFax");
-const nationalParksLatitude = document.getElementById("parksLatitude");
-const nationalParksLongitude = document.getElementById("parksLongitude");
-const nationalParksCoordinates = document.getElementById("parksCoordinates");
+const nationalParksCategoryDropdown = document.getElementById(
+  "nationalParksCategoryDropdown"
+);
+const nationalParksList = document.getElementById("nationalParksArray");
+const parksLocations = document.getElementById("locationsArray");
+const parksTypes = document.getElementById("parkTypesArray");
+
+// const nationalParksDetailRow = document.getElementById("parksDetailRow");
+// const nationalParksLocationName = document.getElementById("LocationName");
+// const nationalParksAddress = document.getElementById("Address");
+// const nationalParksCity = document.getElementById("City");
+// const nationalParksState = document.getElementById("State");
+// const nationalParksZipCode = document.getElementById("parksZipCode");
+// const nationalParksPhone = document.getElementById("parksPhone");
+// const nationalParksFax = document.getElementById("parksFax");
+// const nationalParksLatitude = document.getElementById("parksLatitude");
+// const nationalParksLongitude = document.getElementById("parksLongitude");
+// const nationalParksCoordinates = document.getElementById("parksCoordinates");
 
 window.onload = () => {
   console.log("onload");
-  nationalParksCategoryDropdown.onchange = onParksCategoryDropdownChange;
+  nationalParksCategoryDropdown.onchange =
+    onNationalParksCategoryDropdownChange;
   nationalParksList.onchange = onParksListChange;
 };
 
@@ -27,18 +33,16 @@ function nationalParksCategoryDropdownChange() {
   hideDetailRow();
 
   //figure out what value was selected (which category)
-  let selectedCategory = nationalParksCategoryDropdown.value;
+  let selectedCategory = ParksCategoryDropdown.value;
   console.log(selectedCategory);
 
   function getparksForCategoryCode(categoryCode) {
-    if (categoryCode == "Name") {
-      return parks.LocationName["Hodgenville"];
-    } else if (categoryCode == "State") {
-      return parks.State["Kentucky"];
-    } else if (categoryCode == "LocationName") {
-      return parks.LocationName[
-        "Abraham Lincoln Birthplace National Historical Park"
-      ];
+    if (categoryCode == "locations") {
+      return parks.LocationsArray["locationsArray"];
+    } else if (categoryCode == "parktypes") {
+      return parks.parktypes["parkTypesArray"];
+    } else if (categoryCode == "allNationalParks") {
+      return parks.LocationName["nationalParksArray"];
     } else {
       console.log("unrecognized category");
     }
@@ -72,37 +76,4 @@ function onparksListChange() {
 
   let selectedparksName = parksList.value;
   console.log(selectedparksName);
-
-  //look up selected parks
-  let selectedparks = getparksByName(selectedparksName);
-
-  //set detail row elements to represent this parks.
-  parksName.innerHTML = selectedparks.name;
-  parksAddress.innerHTML = selectedparks.Address;
-  parksCity.innerHTML = selectedparks.City;
-
-  //show detail row
-  showDetailRow();
-}
-
-function getparksByName(parksName) {
-  let selectedCategory = parksCategoryDropdown.value;
-  let parks = getparksForCategoryCode(selectedCategory);
-
-  for (let parks of parks) {
-    if (parks.name == parksName) {
-      return parks;
-    }
-  }
-}
-
-function showDetailRow() {
-  parksDetailRow.style.display = "block";
-}
-
-function hideDetailRow() {
-  parksDetailRow.style.display = "none";
-  parksName.innerHTML = "";
-  parksAddress.innerHTML = "";
-  parksCity.innerHTML = "";
 }

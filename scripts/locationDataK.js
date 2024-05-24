@@ -55,3 +55,28 @@ const locationsArray = [
     "Wisconsin",
     "Wyoming"
 ]
+
+
+
+
+
+// function getCourseByCourseId(courses, courseId){
+//     for(let i = 0; i < courses.length ; i++){
+//     if(courses[i].CourseId == courseId){
+//         return courses[i];
+//     }
+// }
+// }
+
+
+
+
+// // When does the PROG200 course start?
+// console.log();
+// let PROG200Course = getCourseByCourseId(courses, "PROG200");
+// console.log(PROG200Course.StartDate);
+
+// // What is the title of the PROJ500 course?
+// console.log();
+// let PROJ500Course = getCourseByCourseId(courses, "PROJ500");
+// console.log(PROJ500Course.Title)

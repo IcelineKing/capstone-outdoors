@@ -96,3 +96,51 @@ function hideDetailRow() {
   parksAddress.innerHTML = "";
   parksCity.innerHTML = "";
 }
+
+
+
+
+
+
+
+
+
+// TO USE LATER
+
+
+
+
+
+  //look up selected parks
+  let selectedparks = getparksByName(selectedparksName);
+
+  //set detail row elements to represent this parks.
+  parksName.innerHTML = selected.Locationname;
+  parksAddress.innerHTML = selected.Address;
+  parksCity.innerHTML = selected.City;
+
+  //show detail row
+  showDetailRow();
+}
+
+function getparksByName(parksName) {
+  let selectedCategory = parksCategoryDropdown.value;
+  let parks = getparksForCategoryCode(selectedCategory);
+
+  for (let parks of parks) {
+    if (parks.name == parksName) {
+      return parks;
+    }
+  }
+}
+
+function showDetailRow() {
+  parksDetailRow.style.display = "block";
+}
+
+function hideDetailRow() {
+  parksDetailRow.style.display = "none";
+  parksName.innerHTML = "";
+  parksAddress.innerHTML = "";
+  parksCity.innerHTML = "";
+}
