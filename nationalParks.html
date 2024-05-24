@@ -11,7 +11,7 @@
 
     <body>
 
-        <!-- Homepage Details -->
+        <!-- HomepCity Navigation Bar Details -->
 
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -25,25 +25,11 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="nationalParks.html">National
+                                <a class="nav-link active" aria-current="pCity" href="nationalParks.html">National
                                     Parks</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Explore
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="mountains.html">Mountains</a></li>
-                                    <li><a class="dropdown-item" href="index.html">Another action</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
+                                <a class="nav-link" href="mountains.html">Mountains</a>
                             </li>
 
                         </ul>
@@ -117,29 +103,29 @@
             <div class="container">
                 <div class="row mt-4">
                     <div class="col">
-                        <select id="toyCategoryDropdown" class="form-select">
+                        <select id="parksCategoryDropdown" class="form-select">
                             <option selected value="">Please Select a Category</option>
-                            <option value="action_figures">Action Figures</option>
-                            <option value="educational_toys">Educational Toys</option>
-                            <option value="outdoor_toys">Outdoor Toys</option>
+                            <option value="City">Search by City</option>
+                            <option value="State">Search by State</option>
+                            <option value="LocationName">Search by Name</option>
                         </select>
                     </div>
                 </div>
                 <div class="row mt-4">
                     <div class="col">
-                        <select id="toyList" size="10" class="form-select">
+                        <select id="parksList" size="10" class="form-select">
 
                         </select>
                     </div>
                 </div>
-                <div id="toyDetailRow" style="display:none" class="row mt-4">
+                <div id="parksDetailRow" style="display:none" class="row mt-4">
                     <div class="col">
-                        <h1 id="toyName"></h1>
+                        <h1 id="City"></h1>
                         <div>
-                            by <span id="toyManufacturer"></span>
+                            by <span id="State"></span>
                         </div>
                         <div>
-                            for <span id="toyAge"></span>
+                            for <span id="LocationName"></span>
                         </div>
                     </div>
                 </div>
@@ -149,9 +135,9 @@
                 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
                 crossorigin="anonymous"></script>
 
-            <script src="scripts/siteMountain.js"></script>
-            <script src="scripts/mountainDataK.js"></script>
-            <script src="scripts/index2.js"></script>
+
+            <script src="scripts/nationalParkDataK.js"></script>
+            <script src="scripts/siteParks.js"></script>
     </body>
 
 </html>
